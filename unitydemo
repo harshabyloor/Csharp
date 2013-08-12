@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace CouponConsolDAL
+{
+    public interface ICouponDal
+    {
+      
+        int CheckAndSaveCouponCode(List<string> coupon);
+        List<string> GetCouponCode(int numofcoup);
+        int GetCouponCodeCount();
+    }
+
+
+}
+
+public class CouponDal
+{
+CheckAndSaveCouponCode()
+{
+//code
+}
+}
+
+
+
+
+
+unityContainer.LoadConfiguration();
+ICouponDal cdal = unityContainer.Resolve<ICouponDal>();
+int res1=cdal.CheckAndSaveCouponCode(CouponCodee);
+
+            
