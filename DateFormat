@@ -1,0 +1,16 @@
+
+    public class Formatter
+    {
+        public static string FormatAmount(decimal amount)
+        {
+            string finalAmount = string.Empty;
+            if (amount > 0)
+            {
+                if (amount % 1 == 0)
+                    finalAmount = amount.ToString("###.##");
+                else
+                    finalAmount = amount.ToString("C2").Replace("$", "").Replace("£", "");
+            }
+            return finalAmount;
+        }
+    }
