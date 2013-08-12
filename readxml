@@ -1,0 +1,5 @@
+xml = new XmlDocument();
+var xmlfile = ConfigurationManager.AppSettings["XMLFile"];//reading from cofig file(appconfig)
+xml.Load(xmlfile);
+detailNodes = xml.SelectNodes("//TestCaseNum");//it will get all nodes of specific type
+TestCaseNme = xml.GetElementsByTagName("TestCaseName").Item(TestCaseNum).InnerText;//gets innertext of specified node of specified num
