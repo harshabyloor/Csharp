@@ -1,0 +1,22 @@
+
+JsonMediaTypeFormatter formatter = new JsonMediaTypeFormatter();
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    using (HttpResponseMessage httpResponse = client.PostAsync(string.Format("{0}{1}/{2}", baseURI, CONTROLLER, REDEEMCOUPON), request, formatter).Result)
+                    {
+                        string response = httpResponse.Content.ReadAsStringAsync().Result;
+                        if (httpResponse.StatusCode == HttpStatusCode.OK)
+                        {
+                            redeemCouponResponse = Newtonsoft.Json.JsonConvert.DeserializeObject<ViewModel.ResultDetails>(response);
+                        }
+                        else
+                        {
+                            trace.Message = response;
+                            this.HandleException(trace, new Exception(httpResponse.Content.ToString()), callcontext);
+                        }
+                    }
+                }
+                
+//json serializing and deserializing example
