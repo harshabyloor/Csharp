@@ -1,0 +1,5 @@
+planList = (from plan in planList
+                        where plan.PlanStartDate <= DateTime.Now
+                        && plan.PlanEndDate >= DateTime.Now
+                        select plan).ToList();
+//Link statement to get list of plans between dates
