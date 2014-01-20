@@ -1,0 +1,3 @@
+master-header/footer/menu <asp:content place holder> html
+views-shouldnt have html if it imports master file.
+partial views- under divs in views
